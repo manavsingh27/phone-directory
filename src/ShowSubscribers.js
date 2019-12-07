@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header.js';
 import './ShowSubscribers.css';
 class ShowSubscribers extends Component {
-render(){
-
+render() {
+    
     return (
       <div>
         <Header heading="Phone Directory" />
@@ -13,10 +13,10 @@ render(){
             <span className="grid-item name-heading">Name</span>
             <span className="grid-item phone-heading">Phone</span>
           </div>
-          {            
-          this.props.subscribersList.map(sub => {
 
-                 return<div key={sub.id} className="grid-container">
+          {
+            this.props.subscribersList.map(sub => {
+              return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
                 <span className="grid-item action-btn-container">
