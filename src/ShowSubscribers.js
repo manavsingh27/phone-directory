@@ -3,8 +3,10 @@ import Header from './Header.js';
 import './ShowSubscribers.css';
 import { Link } from 'react-router-dom';
 class ShowSubscribers extends Component {
-render() {
-    
+    onDeletedClick = (subscriberId) => {
+        this.props.deleteSubscriberHandler(subscriberId); 
+    }
+    render(){
     return (
       <div>
         <Header heading="Phone Directory" />
@@ -23,8 +25,8 @@ render() {
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
                 <span className="grid-item action-btn-container">
-                  <button className="custom-btn delete-btn">Delete</button>
-                </span>
+                <button className="custom-btn delete-btn" onClick={this.onDeletedClick.bind(this, sub.id)}>Delete</button>
+               </span>
               </div>
             })
           }
